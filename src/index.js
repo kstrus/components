@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import faker from 'faker';
 
 class App extends React.Component {
     render() {
@@ -7,26 +8,26 @@ class App extends React.Component {
             <div className="ui container comments">
                 <div className="comment">
                     <a href="/" className="avatar">
-                        <img alt="avatar"/>
+                        <img src={faker.image.avatar()} alt="avatar"/>
                     </a>
                     <div className="content">
-                        <a href="/" className="author">Terry</a>
+                        <a href="/" className="author">{faker.name.firstName()}</a>
                         <div className="metadata">
-                            <span className="date">Today at 6:09 PM</span>
+                            <span className="date">Today at 6:04 PM</span>
                         </div>
-                        <div className="text">Nice blog post!</div>
+                        <div className="text">{faker.lorem.sentence(5, 7)}</div>
                     </div>
                 </div>
                 <div className="comment">
                     <a href="/" className="avatar">
-                        <img alt="avatar"/>
+                        <img src={faker.image.avatar()} alt="avatar"/>
                     </a>
                     <div className="content">
-                        <a href="/" className="author">Patti P.</a>
+                        <a href="/" className="author">{faker.name.firstName()}</a>
                         <div className="metadata">
                             <span className="date">Yesterday at 2:22 AM</span>
                         </div>
-                        <div className="text">This is awesome</div>
+                        <div className="text">{faker.lorem.sentence(7, 70)}</div>
                     </div>
                 </div>
             </div>
