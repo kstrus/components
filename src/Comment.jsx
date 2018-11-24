@@ -1,19 +1,20 @@
 import React from 'react';
-import faker from 'faker';
 
 class Comment extends React.Component {
     render() {
+        const { avatar, authorName, date, text} = this.props;
+
         return (
             <div className="comment">
                 <a href="/" className="avatar">
-                    <img src={faker.image.avatar()} alt="avatar"/>
+                    <img src={avatar} alt="avatar"/>
                 </a>
                 <div className="content">
-                    <a href="/" className="author">{this.props.authorName}</a>
+                    <a href="/" className="author">{authorName}</a>
                     <div className="metadata">
-                        <span className="date">{this.props.date}</span>
+                        <span className="date">{date}</span>
                     </div>
-                    <div className="text">{this.props.text}</div>
+                    <div className="text">{text}</div>
                 </div>
             </div>
         )
